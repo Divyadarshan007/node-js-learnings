@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Student Details</h1>
+
+    <table border="1" cellSpacing="0" width="500px" align="center">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>GRID</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <% students.map((student)=>{%>
+                <tr>
+                    <td><%= student.id %> </td>
+                    <td><%= student.name %></td>
+                    <td><%= student.course %></td>
+                    <td><%= student.grid %></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>
