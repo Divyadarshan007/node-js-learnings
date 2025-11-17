@@ -3,6 +3,7 @@ const app = express();
 const PORT = 8000;
 
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: true }));
 
 const students = [
     {
@@ -30,6 +31,14 @@ app.get('/', (req, res) => {
     res.render('index', {
         students
     })
+})
+app.get('/add-student', (req, res) => {
+    res.render('form')
+})
+
+app.post('/add-student', (req, res) => {
+    students.push(req.body)
+    return res.redirect('/')
 })
 
 app.listen(PORT, () => {

@@ -8,9 +8,12 @@
 </head>
 
 <body>
-    <h1 align="center">Student Details</h1>
+    <div>
+        <h1 align="center">Student Details</h1>
+        <button onclick="location.href='/add-student'">Add Student</button>
+    </div>
 
-    <table border="1" cellSpacing="0" width="500px" align="center">
+    <table border="1" cellSpacing="0" cellPadding="10" width="600px" align="center">
         <thead>
             <tr>
                 <th>No</th>
@@ -20,12 +23,20 @@
             </tr>
         </thead>
         <tbody align="center">
-            <% students.map((student)=>{%>
+            <% students.map((student)=>{ %>
                 <tr>
-                    <td><%= student.id %> </td>
-                    <td><%= student.name %></td>
-                    <td><%= student.course %></td>
-                    <td><%= student.grid %></td>
+                    <td>
+                        <%= student.id %>
+                    </td>
+                    <td>
+                        <%= student.name %>
+                    </td>
+                    <td>
+                        <%= student.course %>
+                    </td>
+                    <td>
+                        <%= student.grid %>
+                    </td>
                 </tr>
                 <% }) %>
         </tbody>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1 align="center">Student Details</h1>
+        <button onclick="location.href='/add-student'">Add Student</button>
+    </div>
+    <br>
+    <form action="/add-student" align="center" method="post">
+        <div>
+            <label for="id">ID</label>
+            <input type="number" name="id" id="id">
+        </div>
+        <br>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <br>
+        <div>
+            <label for="course">Course</label>
+            <select name="course" id="course">
+                <option value="">Select course</option>
+                <option value="FSD">FSD</option>
+                <option value="UI-UX">UI/UX</option>
+                <option value="AI/ML">AI/ML</option>
+                <option value="Cyber-Security">Cyber Security</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="grid">GRID</label>
+            <input type="number" name="grid" id="grid">
+        </div>
+        <br>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+
+</html>
