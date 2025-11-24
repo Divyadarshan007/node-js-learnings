@@ -20,6 +20,7 @@
                 <th>Name</th>
                 <th>GRID</th>
                 <th>Course</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody align="center">
@@ -36,6 +37,10 @@
                     </td>
                     <td>
                         <%= student.grid %>
+                    </td>
+                    <td>
+                        <a href="/edit-student?stdId=<%= student.id %>">Edit</a>
+                        <a href="/delete-student?stdId=<%= student.id %>">Delete</a>
                     </td>
                 </tr>
                 <% }) %>
