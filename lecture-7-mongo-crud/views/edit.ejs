@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="text-center py-3">Student Form</h1>
+    <div class="d-flex justify-content-center">
+        <form action="/edit-student" method="post" class="w-50">
+            <input type="hidden" value="<%= data.id %>" name="id" class="form-control" id="id">
+            <div>
+                <label for="name" class="form-label fs-4">Name</label>
+                <input type="text" value="<%= data.name %>" name="name" class="form-control" id="name">
+            </div>
+            <div>
+                <label for="age" class="form-label fs-4">Age</label>
+                <input type="number" value="<%= data.age %>" class="form-control" name="age" id="age">
+            </div>
+            <div>
+                <label for="email" class="form-label fs-4">Email</label>
+                <input type="email" value="<%= data.email %>" class="form-control" name="email" id="email">
+            </div>
+            <div>
+                <label for="city" class="form-label fs-4">City</label>
+                <select name="city" id="city" class="form-control">
+                    <option value="" class="fs-4">select city</option>
+                    <option <%=data.city=='Surat' ? "selected" :'' %> value="Surat">Surat</option>
+                    <option <%=data.city=='Ahmedabad' ? "selected" :'' %> value="Ahmedabad">Ahmedabad</option>
+                    <option <%=data.city=='Rajkot' ? "selected" :'' %> value="Rajkot">Rajkot</option>
+                    <option <%=data.city=='Gandhinagar' ? "selected" :'' %> value="Gandhinagar">Gandhinagar</option>
+                </select>
+            </div>
+            <button class="btn btn-primary mt-3" onclick="editStudent">submit</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
