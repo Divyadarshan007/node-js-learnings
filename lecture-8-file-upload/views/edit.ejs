@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form action="/edit-student/<%= student.id %>" method="post" class="w-50" enctype="multipart/form-data">
+            <div>
+                <label for="name" class="form-label fs-4">Name</label>
+                <input type="text" value="<%= student.name %>" name="name" class="form-control" id="name">
+            </div>
+            <br>
+            <div>
+                <label for="age" class="form-label fs-4">Age</label>
+                <input type="number" value="<%= student.age %>" class="form-control" name="age" id="age">
+            </div>
+            <br>
+            <div>
+                <label for="email" class="form-label fs-4">Email</label>
+                <input type="email" class="form-control" value="<%= student.email %>" name="email" id="email">
+            </div>
+            <br>
+            <div class="d-flex gap-3">
+                <input type="file" name="file" id="file" accept="image/*">
+                <img src="/<%= student.photo %>" width="120" alt="">
+            </div>
+            <br>
+            <div>
+                <label for="city" class="form-label fs-4">City</label>
+                <select name="city" id="city" class="form-control">
+                    <option value="" class="fs-4">select city</option>
+                    <option <%= student.city == 'Surat'?'selected':'' %> value="Surat">Surat</option>
+                    <option <%= student.city == 'Ahmedabad'?'selected':'' %> value="Ahmedabad">Ahmedabad</option>
+                    <option <%= student.city == 'Rajkot'?'selected':'' %> value="Rajkot">Rajkot</option>
+                    <option <%= student.city == 'Gandhinagar'?'selected':'' %> value="Gandhinagar">Gandhinagar</option>
+                </select>
+            </div>
+            <br>
+            <button class="btn btn-primary mt-3">submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
